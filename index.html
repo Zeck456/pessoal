@@ -1,28 +1,42 @@
-<link rel="stylesheet" href=".css">
-import { Card, CardContent } from '@/components/ui/card';
-import { useState } from 'react';
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Roupas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#home" class="nav-link">Início</a>
+        <a href="#produtos" class="nav-link">Produtos</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#contato" class="nav-link">Contato</a>
+    </nav>
 
-export default function HomePage() {
-  const [products] = useState([
-    { id: 1, name: 'Camiseta Azul', price: 'R$ 49,90', image: '/images/camiseta-azul.jpg' },
-    { id: 2, name: 'Calça Jeans', price: 'R$ 89,90', image: '/images/calca-jeans.jpg' },
-    { id: 3, name: 'Vestido Floral', price: 'R$ 129,90', image: '/images/vestido-floral.jpg' }
-  ]);
+    <!-- Container Principal -->
+    <div class="main-container">
+        <h1 class="main-title">Bem-vindo à Nossa Loja!</h1>
 
-  return (
-    <div className='min-h-screen bg-blue-100 p-10'>
-      <h1 className='text-3xl font-bold text-blue-900 mb-6'>Loja de Roupas - Novidades</h1>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-        {products.map((product) => (
-          <Card key={product.id} className='bg-white shadow-lg rounded-2xl hover:shadow-2xl transition duration-300'>
-            <img src={product.image} alt={product.name} className='w-full h-60 object-cover rounded-t-2xl' />
-            <CardContent>
-              <h2 className='text-xl font-semibold text-gray-800'>{product.name}</h2>
-              <p className='text-lg text-gray-600'>{product.price}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+        <!-- Grade de Produtos -->
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250x200" alt="Produto 1" class="product-image">
+                <div class="product-name">Produto 1</div>
+                <div class="product-price">R$ 99,90</div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250x200" alt="Produto 2" class="product-image">
+                <div class="product-name">Produto 2</div>
+                <div class="product-price">R$ 149,90</div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250x200" alt="Produto 3" class="product-image">
+                <div class="product-name">Produto 3</div>
+                <div class="product-price">R$ 79,90</div>
+            </div>
+        </div>
     </div>
-  );
-}
+</body>
+</html>
